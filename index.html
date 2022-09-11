@@ -43,7 +43,7 @@
       const btn =
       document.querySelector('button');
       btn.addEventListener('click', () =>
-      displayMessage('Woo, this is a different message!'));
+      displayMessage('Sup dawg', 'chat'));
 
       function displayMessage(msgText, msgType) {
         const body = document.body;
@@ -63,6 +63,16 @@
 
         closeBtn.addEventListener('click', () =>
         panel.parentNode.removeChild(panel));
+
+        if (msgType === 'warning') {
+            msg.style.backgroundImage = 'url(icons/warning.png)';
+            panel.style.backgroundColor = 'red';
+        } else if (msgType === 'chat') {
+            msg.style.backgroundImage = 'url(icons/chat.png)';
+            panel.style.backgroundColor = 'aqua';
+        } else {
+            msg.style.paddingLeft = '20px';
+        }
       }
 
       
